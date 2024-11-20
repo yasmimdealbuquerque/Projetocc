@@ -13,7 +13,7 @@ void tocarnota(int frequencia, int duracao)
 }
 void pianovirtual()
 {
-    cout << "bem vindo ao criador de trilhas sonoras - Piano" << endl;
+    cout << "bem vindo ao criador de trilhas sonoras - violão" << endl;
     cout << "tecle Q - para encerrar." << endl;
 
     while (true)
@@ -22,28 +22,25 @@ void pianovirtual()
         switch (tecla)
         {
         case 'a':
-            tocarnota(261, 300); // nota DO
+            tocarnota(329.65, 500); // nota MI
             break;
         case 's':
-            tocarnota(293, 300); // nota RE
+            tocarnota(246.95, 500); // nota SI
             break;
         case 'd':
-            tocarnota(349, 300); // nota mi
+            tocarnota(196, 500); // nota SOL
             break;
         case 'f':
-            tocarnota(392, 300); // nota sol
+            tocarnota(146.85, 500); // nota RÉ
             break;
         case 'g':
-            tocarnota(440, 300); // nota la
+            tocarnota(110, 500); // nota LA
             break;
         case 'h':
-            tocarnota(493, 300); // nota si
-            break;
-        case 'j':
-            tocarnota(523, 300); // nota do
+            tocarnota(82.40, 500); // nota MI
             break;
         case 'q':
-            cout << "encerrando o piano virtual" << endl;
+            cout << "encerrando o violão virtual" << endl;
             return;
             break;
         default:
