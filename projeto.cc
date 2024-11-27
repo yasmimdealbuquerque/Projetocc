@@ -1,26 +1,32 @@
-#include <iostream>
-#include <conio.h> //biblioteca para ler o áudio
-#include <windows.h>
+#include <iostream> //basicão, pra entrada e saída 
+#include <conio.h> //biblioteca para ler as teclas sem precisar o enter 
+#include <windows.h>//pra acessar funções especificas do windows 
 
 using namespace std;
 
-void tocarnota(int frequencia, int duracao)
+// a função abaixo vai fazer o sistema tocar as notas
+// o beep é uma função da API do windows pra tocar o som 
+void tocarnota(int freq, int tempo)
 {
-    if (frequencia > 0)
+    if (freq > 0)
     {
-        Beep(frequencia, duracao);
+        Beep(freq, tempo); // o som das notas é gerado por essa função, 'beep'
     }
 }
-void pianovirtual()
+
+//a função que literalmente simula o instrumento
+void musicaVirtual()
 {
-    cout << "bem vindo ao criador de trilhas sonoras - violão" << endl;
+    cout << "Bora tocar alguma coisa ?" << endl;
     cout << "tecle Q - para encerrar." << endl;
 
     while (true)
     {
-        char tecla = _getch();
-        switch (tecla)
+        char tecla = _getch(); // as teclas que forem clicadas vão ser salvas na variavel 'tecla' o '_getch' vai lê a tecla sem precisar apertar o enter
+
+        switch (tecla) // diz o que vai acontecer a partir da tecla clicada
         {
+            // aqui são especificadas as frequencias e duração delas, a partir de cada tecla
         case 'a':
             tocarnota(329.65, 500); // nota MI
             break;
@@ -39,19 +45,34 @@ void pianovirtual()
         case 'h':
             tocarnota(82.40, 500); // nota MI
             break;
-        case 'q':
+        case 'q': // tecla 'q' pra encerrar o sistema e mostrar uma mensagem
             cout << "encerrando o violão virtual" << endl;
             return;
             break;
-        default:
-            cout << "voce e um merda" << endl;
+        default: // qualquer outro caso que não esteja dentro do switch, ou seja, teclas erradas
+            cout << "teclas erradas idiota" << endl;
             break;
         }
     }
 }
+
+// essa é a FUNÇÃO PRINCIPAL, ou seja, onde realmente o programa INICIA, ela vai chamar nossa função, 'musicaVirtual'
 int main(int argc, char const *argv[])
 
 {
-    pianovirtual();
-    return 0;
+    musicaVirtual();
+    return 0; // indica que o programa terminou 
 }
+
+//RESUMINDO: 
+//O programa exibe a mensagem de introdução ao sistema no console
+// Entra em um loop onde lê as teclas pressionadas pelo usuário
+// Dependendo da tecla pressionada:
+// Toca uma nota correspondente
+// Encerra o programa ('q')
+// Exibe uma mensagem de erro para teclas não mapeadas
+// O som das notas é gerado pela função Beep
+// Funções usadas: (void tocarNota, void pianoVirtual)
+// Estruturas de controle: (while, switch)
+// Manipulação de teclas com:  _getch
+// API do Windows: (Beep)
