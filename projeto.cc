@@ -13,7 +13,7 @@ void tocarnota(int frequencia, int duracao)
 }
 void pianovirtual()
 {
-    cout << "bem vindo ao criador de trilhas sonoras - violão" << endl;
+    cout << "Bora tocar alguma coisa ?" << endl;
     cout << "tecle Q - para encerrar." << endl;
 
     while (true)
@@ -44,7 +44,7 @@ void pianovirtual()
             return;
             break;
         default:
-            cout << "voce e um merda" << endl;
+            cout << "teclas erradas idiota" << endl;
             break;
         }
     }
