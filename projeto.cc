@@ -65,14 +65,14 @@ int main(int argc, char const *argv[])
 }
 
 //RESUMINDO: 
-//O programa exibe mensagens de introdução no console.
-// Entra em um loop onde lê as teclas pressionadas pelo usuário.
+//O programa exibe a mensagem de introdução ao sistema no console
+// Entra em um loop onde lê as teclas pressionadas pelo usuário
 // Dependendo da tecla pressionada:
 // Toca uma nota correspondente
 // Encerra o programa ('q')
 // Exibe uma mensagem de erro para teclas não mapeadas
 // O som das notas é gerado pela função Beep
-// Funções (void tocarNota, void pianoVirtual)
-// Estruturas de controle (while, switch)
-// Manipulação de teclas com _getch
-// API do Windows (Beep)
+// Funções usadas: (void tocarNota, void pianoVirtual)
+// Estruturas de controle: (while, switch)
+// Manipulação de teclas com:  _getch
+// API do Windows: (Beep)
