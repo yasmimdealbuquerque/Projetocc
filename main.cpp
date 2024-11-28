@@ -43,8 +43,7 @@ void guitarraVirtual(){
         default:
             cout << "Bem, parece que teclou errado... -_-" << endl;
             break; 
-            		
-
+           		
     }
    }
 }
@@ -126,8 +125,7 @@ int main (){
         system("cls");
     }else {
         cout <<"Escolhe algo que existe cara, pfvr..."<< endl;
-        system("pause");
-        
+        system("pause");    
     }
     system("pause");
     return 1; 
