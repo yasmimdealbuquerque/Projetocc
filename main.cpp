@@ -106,13 +106,17 @@ int main (){
     cin >> escolha;
 
     if (escolha == '1'){
-        cout << "Pode tocar sua guitarra" << endl;
+        cout << "Pode tocar sua guitarra " << endl;
+        cout << "Teclas: de q a y" << endl;
+        cout << "Encerrar: b" << endl;
         guitarraVirtual();
         system("pause");
         system("cls");
 
     }else if(escolha == '2'){
         cout <<"Pode tocar sua bateria"<< endl;
+        cout << "Teclas: de 7 a 1" << endl;
+        cout << "Encerrar: 0" << endl;
         bateriaVirtual();
         system("pause");
         system("cls");
@@ -125,6 +129,7 @@ int main (){
         system("pause");
         
     }
-
+    system("pause");
     return 1; 
 }
+
