@@ -71,8 +71,60 @@ int main(int argc, char const *argv[])
 // Toca uma nota correspondente
 // Encerra o programa ('q')
 // Exibe uma mensagem de erro para teclas não mapeadas
+
 // O som das notas é gerado pela função Beep
 // Funções usadas: (void tocarNota, void pianoVirtual)
 // Estruturas de controle: (while, switch)
 // Manipulação de teclas com:  _getch
 // API do Windows: (Beep)
+
+
+//  VAI ME AJUDAR NO SALVAMENTO DA MUSICA:
+// -> ofstream
+/*strAno = nascDat.substr(6,4);
+					int anoNascimento = stoi(strAno);
+					int idadePaciente = anoAtual - anoNascimento;
+					
+					nomeArquivo = cpf + ".txt";
+					
+					ofstream arquivoSave(nomeArquivo, ofstream::out);
+					
+					
+					arquivoSave << "Nome: " 		<< nome 		<< "\n"
+						 		<< "CPF: "  		<< cpf	 		<< "\n"
+						 		<< "Endereço: "  	<< address	 	<< "\n"
+						 		<< "Cidade: "  		<< cidade	 	<< "\n"
+						 		<< "Bairro: "  		<< bairro	 	<< "\n"
+						 		<< "Estado: "  		<< estado	 	<< "\n"
+						 		<< "CEP: "  		<< cep	 		<< "\n"
+						 		<< "Comorbidade: " 	<< comob	<< "\n";
+					
+					arquivoSave.close();
+
+if((idadePaciente >= 65) && (yesComorb == 1)){
+						
+						ofstream arquivoInfo("ComorbList.txt", ios_base::app);
+						
+						if(arquivoInfo.is_open()){
+							
+							arquivoInfo << "CEP: " << cep << ";Idade: " << idadePaciente << ";comorbidade: " << comob << ". \n";
+							arquivoInfo.close();
+
+// -> ofstream
+cout << "患者のCPFに通知します。"<< "\n"
+					     << "Informe o CPF do Paciente: ";
+					cin >> cpf;
+					
+					nomeArquivo = cpf + ".txt";
+					
+					ifstream arquivoLeitura(nomeArquivo);
+					
+					if(arquivoLeitura.is_open()){
+						
+						while(getline(arquivoLeitura, linhaArquivo)){
+							cout << linhaArquivo << endl;
+						}
+						
+						arquivoLeitura.close();
+
+*/
