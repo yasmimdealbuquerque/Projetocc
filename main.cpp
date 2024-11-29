@@ -2,7 +2,7 @@
 #include <conio.h> 
 #include <windows.h> 
 #include <locale.h>
-//incluir biblioteca pra gravar as musicas - acho que é a fstream 
+#include <fstream> 
 
 using namespace std;
 
@@ -92,13 +92,15 @@ int main (){
 
     system("color BD");
 
+    string const(nomeMusica);
+    string nomeFile;
     char escolha;
     do { // é pra rodar o bloco baixo várias vezes, mas ele vai testar antes 
         cout << " " << endl;
         cout << "Aoba, esse é nosso 'joguinho' musical, seja bem vindo!" << endl;
         cout << "Temos dois instrumentos diferentes pra tocar"<< endl;
         cout << " " << endl;
-        cout << "Faça sua escolha" << endl;
+        cout << "Faça sua escolha e aperte 'enter' " << endl;
         cout << "1 - Guitarra" << endl;
         cout << "2 - Bateria" << endl;
         cout << "3 - Sair do joguinho" << endl;
@@ -110,8 +112,26 @@ int main (){
             cout << "Teclas: de q a y" << endl;
             cout << "Encerrar: b" << endl;
             guitarraVirtual();
+            
             system("pause");
             system("cls");
+
+            // socorro Deeeeeussssss
+            cout << "Dê um nome pra música que você tocou: " << endl;
+            cin >> nomeMusica;
+
+            nomeFile = nomeMusica + ".txt";
+            
+            ofstream file (nomeMusica, ofstream::out);
+
+            file << "Música: " 	<< nomeMusica	<< "\n"
+                 << "Frequências: " <<  Beep << "\n";
+            
+            file.close();
+
+            system("pause");
+            system("cls");
+            //
 
         }else if(escolha == '2'){
             cout <<"Pode tocar sua bateria"<< endl;
