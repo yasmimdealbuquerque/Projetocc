@@ -13,7 +13,7 @@ void playNotes(int freq, int tempo){
     }
 }
 
-void guitarraVirtual(string musicDados){
+void guitarraVirtual(string& musicDados){
    while (true){
     char notes = _getch();
 
@@ -46,17 +46,17 @@ void guitarraVirtual(string musicDados){
             cout << "Não quer mais tocar guitarra ?" << "\n"
                  << "Bom, você não é um Jimmy Page, mas continue tentando ^-^"<< "\n"
                  << "Sua música está sendo gravada, aguarde '-' " << endl;
+                  system("pause");
             return;
-            system("pause");
+           
         default:
             cout << "Bem, parece que teclou errado... -_-" << endl;
             break; 
-           		
     }
    }
 }
 
-void bateriaVirtual(string musicDados){
+void bateriaVirtual(string& musicDados){
     while(true){
         char notes = _getch();
 
@@ -103,10 +103,14 @@ void bateriaVirtual(string musicDados){
 
 void saveMusic(const string nameFile, const string musicDados){
     ofstream saveArquivo(nameFile, ofstream::out);
+    if(!saveArquivo){
+        cout << "Poxa, não conseguimos abrir o arquivo para salva sua música..." << endl;
+        return;
+    }
+
+    saveArquivo << musicDados << endl;
     if (saveArquivo.is_open()){
-        saveArquivo << "Notas: " << "\n" 
-                    << musicDados << endl; //era pra escrever o valor que recebe dentro do switch
-        cout << "Música salva, hehe :D" << endl; //adicionar algnus cls 
+        cout << "Música salva, hehe :D" << endl; 
     }else{
         cout <<"Vish, deu erro ao salvar ¨_¨ "<<endl;
     }
@@ -168,8 +172,7 @@ int main (){
                 cout << "Encerrar: b" << endl;
                 guitarraVirtual(musicDados);
                 
-                system("pause");
-                system("cls");
+                
 
             }else if(escolha == '2'){
                 cout <<"Pode tocar sua bateria"<< endl;
@@ -177,8 +180,7 @@ int main (){
                 cout << "Encerrar: 0" << endl;
                 bateriaVirtual(musicDados);
                 
-                system("pause");
-                system("cls");
+                
         }
 
         saveMusic(nameFile, musicDados);
@@ -193,12 +195,10 @@ int main (){
 
         }else if (escolha == '4'){
             cout << "Obrigada por tocar, não esqueça de voltar pra praticar L(^^)" << endl;
-            system("pause");
-            system("cls");
+            
         }else {
             cout <<"Escolhe algo que existe cara, pfvr..."<< endl;
-            system("pause");   
-            system("cls"); 
+        
         }
     }while(escolha != '4');
     system("pause");
